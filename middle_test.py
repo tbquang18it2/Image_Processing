@@ -88,7 +88,7 @@ class Ui_MainWindow(object):
         self.groupButton.setTitle(_translate("MainWindow", "Group Button"))
         self.pushButton.setText(_translate("MainWindow", "Open Image"))
         self.pushButton_2.setText(_translate("MainWindow", "Reverse Image"))
-        self.pushButton_3.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton_3.setText(_translate("MainWindow", "Logarit Transform"))
         self.pushButton_4.setText(_translate("MainWindow", "PushButton"))
         self.pushButton_5.setText(_translate("MainWindow", "PushButton"))
         self.pushButton_6.setText(_translate("MainWindow", "PushButton"))
@@ -133,9 +133,6 @@ class Ui_MainWindow(object):
             c = 255 / np.log(1 + np.max(self.image))
             self.log_image = c * (np.log(self.image + 1))
             self.log_image = np.array(self.log_image, dtype=np.uint8)
-            cv2.imshow("Logarit Transform ", self.log_image)
-            cv2.waitKey()
-            cv2.destroyAllWindows()
             self.show_image(self.log_image)
     @QtCore.pyqtSlot()
     def show_image(self, img):
